@@ -8,9 +8,6 @@ import Worldwide from "@/public/assets/worldwide.png";
 
 const Card = styled("div", {
 	cursor: "pointer",
-	flex: 1,
-	width: "100%",
-	minHeight: 300,
 	position: "relative",
 });
 
@@ -21,8 +18,8 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
 		<Card onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
 			<Box
 				css={{
-					height: "100%",
 					position: "relative",
+					minHeight: 500,
 					background: "linear-gradient(180deg, black 0%, $gray12 100%)",
 					borderBottom: "2px solid white",
 					marginBottom: 12,
@@ -30,7 +27,7 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
 						background: "linear-gradient(180deg, black 0%, $gray14 100%)",
 					},
 				}}>
-				<Image src={product.image} alt={`${product.name} product image`} objectFit="cover" layout="fill" />
+				<Image src={product.image} alt={`${product.name} product image`} objectFit="contain" layout="fill" />
 			</Box>
 			<Box
 				css={{
@@ -62,10 +59,11 @@ const Products: React.FC<{ payload: Product[] }> = ({ payload }) => {
 		<Box
 			css={{
 				margin: "5vh 12px 0",
+				minHeight: 500,
 
-				display: "flex",
-				gap: 24,
-				flexWrap: "wrap",
+				display: "grid",
+				gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+				gap: 16,
 			}}>
 			{payload.map((product, index) => (
 				<ProductCard key={"prod" + index} product={product} />
