@@ -88,7 +88,7 @@ const Warning = () => {
 const StyledNavigation = styled("nav", {
 	display: "flex",
 	justifyContent: "space-between",
-	margin: "12px 4vw 0",
+	margin: "12px 2.5vw 0",
 
 	"@sm2": {
 		display: "grid",

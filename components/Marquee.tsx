@@ -1,14 +1,16 @@
-import Asterisk from "@/public/assets/asterisk.png";
 import { styled } from "@/stitches.config";
 import Image from "next/image";
 import * as MarqueeComponent from "react-fast-marquee";
 import Box from "./Box";
 
+import Asterisk from "@/public/assets/asterisk.png";
+import Asterisk2 from "@/public/assets/asterisk2.png";
+
 const StyledMarquee = styled(MarqueeComponent.default, {
 	borderTop: "1px solid white",
 	borderBottom: "1px solid white",
 	paddingY: 12,
-	fontSize: "2rem",
+	fontSize: "3vw",
 });
 
 const AsteriskWrapper = styled("div", {
@@ -41,9 +43,12 @@ const Marquee = () => {
 				css={{
 					bottom: 0,
 					right: "5%",
-					transform: "rotate(150deg)",
 				}}>
-				<Image src={Asterisk} layout="responsive" alt="Three-dimensional black asterisk with a white outline" />
+				<Image
+					src={Asterisk2}
+					layout="responsive"
+					alt="Three-dimensional black asterisk with a white outline"
+				/>
 			</AsteriskWrapper>
 			<StyledMarquee speed={40} gradient={false} loop={0}>
 				A man can&apos;t have enough basement swag — A man can&apos;t have enough basement swag — A man

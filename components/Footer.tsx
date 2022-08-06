@@ -25,6 +25,7 @@ const Footer = () => {
 				marginTop: "10vh",
 				width: "95%",
 				marginX: "auto",
+				textAlign: "right",
 			}}>
 			<Box
 				css={{

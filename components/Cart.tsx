@@ -11,7 +11,7 @@ export const StyledTrigger = styled("button", {
 	color: "white",
 	cursor: "pointer",
 	padding: "12px 24px",
-	border: "1px solid white",
+	border: "2px solid white",
 	borderRadius: 24,
 });
 
