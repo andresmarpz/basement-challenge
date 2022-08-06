@@ -1,8 +1,10 @@
 import Header from "@/components/Header";
 import Marquee from "@/components/Marquee";
 import Navigation from "@/components/Navigation";
+import Products from "@/components/Products";
+import { Product } from "@/product/types";
 import { styled } from "@/stitches.config";
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 
 const Container = styled("div", {
@@ -16,7 +18,19 @@ const Main = styled("main", {
 	height: "100%",
 });
 
-const Home: NextPage = () => {
+export const getStaticProps: GetStaticProps = async () => {
+	const products = await import("@/product/mock.json").then((m) => m.default);
+
+	return {
+		props: { products },
+	};
+};
+
+interface Props {
+	products: Product[];
+}
+
+const Home: NextPage<Props> = ({ products }) => {
 	return (
 		<>
 			<Head>
@@ -27,6 +41,7 @@ const Home: NextPage = () => {
 				<Main>
 					<Header />
 					<Marquee />
+					<Products payload={products} />
 				</Main>
 			</Container>
 		</>
