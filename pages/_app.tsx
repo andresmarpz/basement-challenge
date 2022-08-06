@@ -6,8 +6,9 @@ const globalStyles = globalCss({
 		boxSizing: "border-box",
 	},
 	"html, body": {
-		padding: 0,
+		backgroundColor: "black",
 		margin: 0,
+		padding: 0,
 		fontFamily: `"BasementGrotesque", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif`,
 	},
 });
