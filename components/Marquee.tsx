@@ -18,7 +18,7 @@ const AsteriskWrapper = styled("div", {
 	transform: "translateZ(0px)",
 	display: "none",
 
-	"@bp1": {
+	"@sm": {
 		display: "block",
 	},
 });
@@ -41,6 +41,7 @@ const Marquee = () => {
 				css={{
 					bottom: 0,
 					right: "5%",
+					transform: "rotate(150deg)",
 				}}>
 				<Image src={Asterisk} layout="responsive" alt="Three-dimensional black asterisk with a white outline" />
 			</AsteriskWrapper>

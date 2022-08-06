@@ -86,14 +86,30 @@ const Warning = () => {
 };
 
 const StyledNavigation = styled("nav", {
-	display: "grid",
-	gridTemplateColumns: "1fr 1fr 1fr",
+	display: "flex",
+	justifyContent: "space-between",
 	margin: "12px 4vw 0",
+
+	"@sm2": {
+		display: "grid",
+		gridTemplateColumns: "1fr 1fr 1fr",
+	},
 });
 
 const StyledLogo = styled("h1", {
 	color: "white",
 	fontSize: "2rem",
+
+	variants: {
+		visible: {
+			true: {
+				display: "block",
+			},
+			false: {
+				display: "none",
+			},
+		},
+	},
 });
 
 const StyledFlex = styled("span", {
@@ -105,12 +121,30 @@ const Navigation = () => {
 	return (
 		<StyledNavigation>
 			<StyledFlex>
-				<StyledLogo>basement</StyledLogo>
+				<StyledLogo
+					visible={{
+						"@initial": "false",
+						"@sm2": true,
+					}}>
+					basement
+				</StyledLogo>
+				<StyledLogo
+					visible={{
+						"@initial": true,
+						"@sm2": false,
+					}}>
+					b.
+				</StyledLogo>
 			</StyledFlex>
 			<StyledFlex
 				css={{
 					justifyContent: "center",
 					gap: 16,
+
+					display: "none",
+					"@sm2": {
+						display: "flex",
+					},
 				}}>
 				<Circle />
 				<HighDefinition />

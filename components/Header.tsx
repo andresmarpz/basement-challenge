@@ -24,7 +24,7 @@ const Ellipsis = ({ children }: { children?: React.ReactNode }) => {
 	return (
 		<Box
 			css={{
-				outline: "1px solid white",
+				border: "1px solid white",
 				borderRadius: "50%",
 				padding: "1.5vw",
 				width: "10vw",

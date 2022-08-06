@@ -15,7 +15,13 @@ const config = createStitches({
 		}
 	},
 	media: {
-		bp1: '(min-width: 480px)'
+		'bp1': '(min-width: 480px)',
+		'sm': '(min-width: 640px)',
+		'sm2': '(min-width: 720px)',
+		'md': '(min-width: 768px)',
+		'lg': '(min-width: 1024px)',
+		'xl': '(min-width: 1280px)',
+		'2xl': '(min-width: 1536px)',
 	},
 	utils: {
 		marginY: (value: number | string) => ({
