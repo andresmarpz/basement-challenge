@@ -1,6 +1,8 @@
 import { styled } from "@/stitches.config";
 import React from "react";
 
+import * as Dialog from "@radix-ui/react-dialog";
+
 export const StyledTrigger = styled("button", {
 	all: "unset",
 
