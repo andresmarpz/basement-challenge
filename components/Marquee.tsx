@@ -16,6 +16,11 @@ const AsteriskWrapper = styled("div", {
 	zIndex: 20,
 	width: "10%",
 	transform: "translateZ(0px)",
+	display: "none",
+
+	"@bp1": {
+		display: "block",
+	},
 });
 
 const Marquee = () => {
@@ -28,14 +33,14 @@ const Marquee = () => {
 			<AsteriskWrapper
 				css={{
 					top: 0,
-					left: 20,
+					left: "5%",
 				}}>
 				<Image src={Asterisk} layout="responsive" alt="Three-dimensional black asterisk with a white outline" />
 			</AsteriskWrapper>
 			<AsteriskWrapper
 				css={{
 					bottom: 0,
-					right: 20,
+					right: "5%",
 				}}>
 				<Image src={Asterisk} layout="responsive" alt="Three-dimensional black asterisk with a white outline" />
 			</AsteriskWrapper>

@@ -7,6 +7,8 @@ import { styled } from "@/stitches.config";
 import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 
+import Footer from "@/components/Footer";
+
 const Container = styled("div", {
 	maxWidth: "",
 	margin: "0 auto",
@@ -42,6 +44,7 @@ const Home: NextPage<Props> = ({ products }) => {
 					<Header />
 					<Marquee />
 					<Products payload={products} />
+					<Footer />
 				</Main>
 			</Container>
 		</>

@@ -59,7 +59,6 @@ const Products: React.FC<{ payload: Product[] }> = ({ payload }) => {
 		<Box
 			css={{
 				margin: "5vh 12px 0",
-				minHeight: 500,
 
 				display: "grid",
 				gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",

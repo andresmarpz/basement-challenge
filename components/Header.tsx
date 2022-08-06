@@ -2,14 +2,22 @@ import Box from "@/components/Box";
 import { styled } from "@/stitches.config";
 
 const StyledHeader = styled("div", {
-	marginTop: 24,
 	textAlign: "center",
+	marginTop: 24,
 });
 
-const StyledTitle = styled("p", {
-	fontSize: "14vw",
+const Title = styled("p", {
+	fontSize: "14.5vw",
 	lineHeight: 0.9,
 	margin: 0,
+});
+
+const StrokeTitle = styled("p", {
+	fontSize: "14.5vw",
+	lineHeight: 0.9,
+	margin: 0,
+	color: "black",
+	textShadow: "-1px 0 white, 0 1px white, 1px 0 white, 0 -1px white",
 });
 
 const Ellipsis = ({ children }: { children?: React.ReactNode }) => {
@@ -31,7 +39,7 @@ const Ellipsis = ({ children }: { children?: React.ReactNode }) => {
 const Header = () => {
 	return (
 		<StyledHeader>
-			<StyledTitle>BASEMENT</StyledTitle>
+			<Title>BASEMENT</Title>
 			<Box
 				css={{
 					display: "flex",
@@ -40,13 +48,7 @@ const Header = () => {
 					gap: "1vw",
 				}}>
 				<Ellipsis>EST</Ellipsis>
-				<StyledTitle
-					css={{
-						color: "black",
-						textShadow: "-1px 0 white, 0 1px white, 1px 0 white, 0 -1px white",
-					}}>
-					SUPPLY
-				</StyledTitle>
+				<StrokeTitle>SUPPLY</StrokeTitle>
 				<Ellipsis>2K22</Ellipsis>
 			</Box>
 		</StyledHeader>

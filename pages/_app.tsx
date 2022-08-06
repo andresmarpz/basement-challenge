@@ -4,6 +4,10 @@ import type { AppProps } from "next/app";
 const globalStyles = globalCss({
 	"*": {
 		boxSizing: "border-box",
+		"&::selection": {
+			color: "black",
+			backgroundColor: "white",
+		},
 	},
 	"html, body": {
 		backgroundColor: "black",
