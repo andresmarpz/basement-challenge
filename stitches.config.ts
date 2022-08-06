@@ -8,7 +8,10 @@ const config = createStitches({
 	theme: {
 		colors: {
 			...gray,
-			...blue
+			...blue,
+			'gray13': 'rgb(18, 18, 18)',
+			'gray14': 'rgb(15, 15, 15)',
+			'gray15': 'rgb(12, 12, 12)',
 		}
 	},
 	media: {
