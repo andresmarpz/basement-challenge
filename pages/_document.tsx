@@ -34,7 +34,6 @@ export default function Document() {
                 />
                 {/* Taken from leerob's website :) */}
                 {/* Favicons generated for each device */}
-                <link href="/site.webmanifest" rel="manifest" />
                 <link href="/favicons/favicon.ico" rel="shortcut icon" />
                 <link href="/favicons/favicon.png" rel="icon" sizes="260x260" type="image/png" />
                 <link href="/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />

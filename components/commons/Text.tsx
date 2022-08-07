@@ -1,5 +1,5 @@
 import { styled } from '@/stitches.config';
-import { CSSProperties } from '@stitches/react';
+import { CSSProperties } from 'react';
 import React from 'react';
 
 const StyledText = styled('p', {
