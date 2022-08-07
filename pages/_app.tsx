@@ -16,13 +16,13 @@ const globalStyles = globalCss({
         },
         '&::-webkit-scrollbar-thumb': {
             backgroundColor: 'white'
-        }
+        },
+        fontFamily: `"BasementGrotesque", "Times New Roman", BlinkMacSystemFont, "Helvetica Neue", sans-serif`
     },
     'html, body': {
         backgroundColor: 'black',
         margin: 0,
         padding: 0,
-        fontFamily: `"BasementGrotesque", "Times New Roman", BlinkMacSystemFont, "Helvetica Neue", sans-serif`,
         overflow: 'auto important!'
     }
 });
