@@ -1,26 +1,27 @@
-import { globalCss } from "@/stitches.config";
-import type { AppProps } from "next/app";
+import { globalCss } from '@/stitches.config';
+import type { AppProps } from 'next/app';
 
 const globalStyles = globalCss({
-	"*": {
-		boxSizing: "border-box",
-		"&::selection": {
-			color: "black",
-			backgroundColor: "white",
-		},
-	},
-	"html, body": {
-		backgroundColor: "black",
-		margin: 0,
-		padding: 0,
-		fontFamily: `"BasementGrotesque", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif`,
-	},
+    '*': {
+        boxSizing: 'border-box',
+        '&::selection': {
+            color: 'black',
+            backgroundColor: 'white'
+        }
+    },
+    'html, body': {
+        backgroundColor: 'black',
+        margin: 0,
+        padding: 0,
+        fontFamily: `"BasementGrotesque", "Times New Roman", BlinkMacSystemFont, "Helvetica Neue", sans-serif`,
+        overflow: 'auto important!'
+    }
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
-	globalStyles();
+    globalStyles();
 
-	return <Component {...pageProps} />;
+    return <Component {...pageProps} />;
 }
 
 export default MyApp;

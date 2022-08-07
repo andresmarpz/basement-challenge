@@ -9,6 +9,5 @@
     "proseWrap": "preserve",
     "singleAttributePerLine": false,
     "semi": true,
-    "printWidth": 140,
-    "useTabs": false
+    "printWidth": 120
 }

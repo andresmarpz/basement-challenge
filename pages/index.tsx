@@ -1,54 +1,51 @@
-import Header from "@/components/Header";
-import Marquee from "@/components/Marquee";
-import Navigation from "@/components/Navigation";
-import Products from "@/components/Products";
-import { Product } from "@/product/types";
-import { styled } from "@/stitches.config";
-import type { GetStaticProps, NextPage } from "next";
-import Head from "next/head";
+import Head from 'next/head';
 
-import Footer from "@/components/Footer";
+import Navigation from '@/components/Navigation';
+import Hero from '@/components/Hero';
+import Marquee from '@/components/Marquee';
+import Products from '@/components/Products';
+import Footer from '@/components/Footer';
 
-const Container = styled("div", {
-	maxWidth: "",
-	margin: "0 auto",
+import { styled } from '@/stitches.config';
+import type { GetStaticProps, NextPage } from 'next';
+import { Product } from '@/product/types';
+
+const Container = styled('div', {
+    maxWidth: '',
+    margin: '0 auto'
 });
 
-const Main = styled("main", {
-	color: "white",
-	minHeight: "100vh",
-	height: "100%",
+const Main = styled('main', {
+    color: 'white',
+    height: '100%',
+    minHeight: '100vh'
 });
 
 export const getStaticProps: GetStaticProps = async () => {
-	const products = await import("@/product/mock.json").then((m) => m.default);
+    const products = await import('@/product/mock.json').then((m) => m.default);
 
-	return {
-		props: { products },
-	};
+    return {
+        props: { products }
+    };
 };
 
-interface Props {
-	products: Product[];
-}
-
-const Home: NextPage<Props> = ({ products }) => {
-	return (
-		<>
-			<Head>
-				<title>basement 🏴 challenge</title>
-			</Head>
-			<Container>
-				<Navigation />
-				<Main>
-					<Header />
-					<Marquee />
-					<Products payload={products} />
-					<Footer />
-				</Main>
-			</Container>
-		</>
-	);
+const Home: NextPage<{ products: Product[] }> = ({ products }) => {
+    return (
+        <>
+            <Head>
+                <title>basement 🏴 challenge</title>
+            </Head>
+            <Container>
+                <Navigation />
+                <Main>
+                    <Hero />
+                    <Marquee />
+                    <Products payload={products} />
+                    <Footer />
+                </Main>
+            </Container>
+        </>
+    );
 };
 
 export default Home;

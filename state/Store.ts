@@ -1,20 +1,18 @@
 import { Product } from '@/product/types';
 import create from 'zustand';
 
+export interface ItemEntry {
+	product: Product;
+	quantity: number;
+}
 interface Store {
 	/**
 	 * The products in the cart.
 	 * key: product id
-	 *   value: { product, quantity }
-	 * @type {Map<string, {
-	 *   Product, quantity
-	 * }>}
+	 * @type Map<string, ItemEntry>
 	 */
 	cartItems: {
-		[key: string]: {
-			product: Product,
-			quantity: number
-		}
+		[key: string]: ItemEntry
 	};
 	addToCart: (product: Product) => void;
 	removeFromCart: (product: Product) => void;
