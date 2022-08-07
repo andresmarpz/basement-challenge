@@ -13,6 +13,9 @@ export default function Document() {
                 />
                 <meta name="theme-color" content="#000000" />
                 <meta content="#000000" name="msapplication-TileColor" />
+                <meta content="Basement Challenge" name="og:title" />
+                <meta content={`/assets/og.png`} property="og:image" />
+                <meta content="website" property="og:type" />
                 {/* Stitches SSR */}
                 <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() }} />
                 {/* Preload fonts as soon as possible */}
@@ -26,15 +29,7 @@ export default function Document() {
                 {/* Font face SSR */}
                 <style
                     dangerouslySetInnerHTML={{
-                        __html: `
-							@font-face {
-								font-family: 'BasementGrotesque';
-								font-style: normal;
-								font-weight: 100 900;
-								font-display: optional;
-								src: url("/fonts/BasementGrotesque-Black_v1.202.woff2") format("woff2");
-							}
-						`
+                        __html: "@font-face {font-family: 'BasementGrotesque';font-style: normal;font-weight: 100 900;font-display: optional;src: url('/fonts/basementgrotesque.woff2') format('woff2');}"
                     }}
                 />
                 {/* Taken from leerob's website :) */}
