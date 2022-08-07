@@ -21,7 +21,7 @@ export default function Document() {
                 {/* Preload fonts as soon as possible */}
                 <link
                     rel="preload"
-                    href="/fonts/BasementGrotesque-Black_v1.202.woff2"
+                    href="/fonts/basementgrotesque.woff2"
                     as="font"
                     type="font/woff2"
                     crossOrigin="anonymous"
