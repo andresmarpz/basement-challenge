@@ -17,13 +17,12 @@ const globalStyles = globalCss({
         '&::-webkit-scrollbar-thumb': {
             backgroundColor: 'white'
         },
-        fontFamily: `"BasementGrotesque", "Times New Roman", BlinkMacSystemFont, "Helvetica Neue", sans-serif`
+        fontFamily: `"BasementGrotesque", "Arial", BlinkMacSystemFont, "Helvetica Neue", sans-serif`
     },
     'html, body': {
         backgroundColor: 'black',
         margin: 0,
-        padding: 0,
-        overflow: 'auto important!'
+        padding: 0
     }
 });
 

@@ -16,8 +16,6 @@ export default function Document() {
                 <meta content="Basement Challenge" name="og:title" />
                 <meta content={`/assets/og.png`} property="og:image" />
                 <meta content="website" property="og:type" />
-                {/* Stitches SSR */}
-                <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() }} />
                 {/* Preload fonts as soon as possible */}
                 <link
                     rel="preload"
@@ -41,6 +39,8 @@ export default function Document() {
                 <link href="/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
                 <link href="/favicons/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png" />
                 <link href="/favicons/android-chrome-512x512.png" rel="icon" sizes="512x512" type="image/png" />
+                {/* Stitches SSR */}
+                <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() }} />
             </Head>
             <body>
                 <Main />
