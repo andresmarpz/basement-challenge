@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 import Worldwide from "@/public/assets/worldwide.png";
+import { useStore } from "@/state/Store";
 
 const Card = styled("div", {
 	cursor: "pointer",
@@ -13,9 +14,13 @@ const Card = styled("div", {
 
 const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
 	const [hovered, setHovered] = useState<boolean>(false);
+	const { addToCart } = useStore();
 
 	return (
-		<Card onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+		<Card
+			onClick={() => addToCart(product)}
+			onMouseEnter={() => setHovered(true)}
+			onMouseLeave={() => setHovered(false)}>
 			<Box
 				css={{
 					position: "relative",

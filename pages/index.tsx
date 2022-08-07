@@ -36,7 +36,7 @@ const Home: NextPage<Props> = ({ products }) => {
 	return (
 		<>
 			<Head>
-				<title>Basement Supply</title>
+				<title>basement 🏴 challenge</title>
 			</Head>
 			<Container>
 				<Navigation />

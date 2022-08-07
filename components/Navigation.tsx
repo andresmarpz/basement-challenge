@@ -1,5 +1,5 @@
+import Cart from "@/components/Cart";
 import { styled } from "@/stitches.config";
-import { CartTrigger } from "./Cart";
 
 const Circle = () => {
 	return (
@@ -156,7 +156,7 @@ const Navigation = () => {
 				css={{
 					justifyContent: "flex-end",
 				}}>
-				<CartTrigger />
+				<Cart />
 			</StyledFlex>
 		</StyledNavigation>
 	);
