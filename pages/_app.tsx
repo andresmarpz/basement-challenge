@@ -5,7 +5,7 @@ const globalStyles = globalCss({
     '@font-face': {
         fontFamily: 'BasementGrotesque',
         fontStyle: 'normal',
-        fontDisplay: 'optional',
+        fontDisplay: 'swap',
         src: 'url(/fonts/basementgrotesque.woff2) format("woff2")'
     },
     '*': {
@@ -28,6 +28,7 @@ const globalStyles = globalCss({
         backgroundColor: 'black',
         margin: 0,
         padding: 0,
+        textRendering: 'geometricPrecision',
         fontFamily: `"BasementGrotesque", "Helvetica Neue", sans-serif`
     }
 });
