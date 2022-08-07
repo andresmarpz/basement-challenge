@@ -1,5 +1,6 @@
 import { globalCss } from '@/stitches.config';
 import type { AppProps } from 'next/app';
+import { RealViewportProvider } from 'next-real-viewport';
 
 const globalStyles = globalCss({
     '@font-face': {
@@ -39,7 +40,12 @@ const globalStyles = globalCss({
 function MyApp({ Component, pageProps }: AppProps) {
     globalStyles();
 
-    return <Component {...pageProps} />;
+    return (
+        // Type '{ children: (string | Element)[]; }' has no properties in common with type 'IntrinsicAttributes & Props'.ts(2559)
+        <RealViewportProvider>
+            <Component {...pageProps} />
+        </RealViewportProvider>
+    );
 }
 
 export default MyApp;

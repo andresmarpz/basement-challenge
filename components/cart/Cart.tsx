@@ -55,10 +55,11 @@ const StyledContent = styled(Dialog.Content, {
     flexDirection: 'column',
 
     transform: 'translateZ(0)',
+    overflowY: 'hidden',
     color: 'white',
     backgroundColor: 'black',
     width: '100%',
-    height: '100%',
+    height: '100vh',
     position: 'fixed',
     top: 0,
     right: 0,
@@ -82,16 +83,6 @@ const StyledClose = styled(Dialog.Close, {
     color: 'white',
     margin: 12,
     padding: '6px 10px'
-});
-
-const StyledCheckout = styled('button', {
-    all: 'unset',
-
-    cursor: 'pointer',
-    width: '100%',
-    height: '100%',
-    textAlign: 'center',
-    flexBasis: '33%'
 });
 
 const Root = Dialog.Root;
