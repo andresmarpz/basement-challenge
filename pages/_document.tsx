@@ -28,7 +28,7 @@ export default function Document() {
                     dangerouslySetInnerHTML={{
                         __html: `
 							@font-face {
-								font-family: 'Inter';
+								font-family: 'BasementGrotesque';
 								font-style: normal;
 								font-weight: 100 900;
 								font-display: optional;
