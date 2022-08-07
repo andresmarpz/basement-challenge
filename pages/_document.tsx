@@ -24,12 +24,6 @@ export default function Document() {
                     type="font/woff2"
                     crossOrigin="anonymous"
                 />
-                {/* Font face SSR */}
-                <style
-                    dangerouslySetInnerHTML={{
-                        __html: "@font-face {font-family: 'BasementGrotesque';font-style: normal;font-weight: 100 900;font-display: optional;src: url('/fonts/basementgrotesque.woff2') format('woff2');}"
-                    }}
-                />
                 {/* Taken from leerob's website :) */}
                 {/* Favicons generated for each device */}
                 <link href="/favicons/favicon.ico" rel="shortcut icon" />

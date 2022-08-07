@@ -2,6 +2,12 @@ import { globalCss } from '@/stitches.config';
 import type { AppProps } from 'next/app';
 
 const globalStyles = globalCss({
+    '@font-face': {
+        fontFamily: 'BasementGrotesque',
+        fontStyle: 'normal',
+        fontDisplay: 'optional',
+        src: 'url(/fonts/basementgrotesque.woff2) format("woff2")'
+    },
     '*': {
         boxSizing: 'border-box',
         '&::selection': {
@@ -16,13 +22,13 @@ const globalStyles = globalCss({
         },
         '&::-webkit-scrollbar-thumb': {
             backgroundColor: 'white'
-        },
-        fontFamily: `"BasementGrotesque", "Arial", BlinkMacSystemFont, "Helvetica Neue", sans-serif`
+        }
     },
     'html, body': {
         backgroundColor: 'black',
         margin: 0,
-        padding: 0
+        padding: 0,
+        fontFamily: `"BasementGrotesque", "Helvetica Neue", sans-serif`
     }
 });
 
