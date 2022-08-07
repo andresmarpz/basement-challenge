@@ -32,7 +32,7 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
 						background: "linear-gradient(180deg, black 0%, $gray14 100%)",
 					},
 				}}>
-				<Image src={product.image} alt={`${product.name} product image`} objectFit="contain" layout="fill" />
+				<Image src={product.image} alt={`${product.name} product image`} objectFit="contain" layout="fill" draggable={false} />
 			</Box>
 			<Box
 				css={{
@@ -52,7 +52,7 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
 						transform: "translate(-50%,-50%) scale(1.25)",
 						pointerEvents: "none",
 					}}>
-					<Image src={Worldwide} alt="Add to card text with a globe behind" />
+					<Image src={Worldwide} alt="Add to card text with a globe behind" draggable={false} />
 				</Box>
 			)}
 		</Card>

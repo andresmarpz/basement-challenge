@@ -37,7 +37,7 @@ const Marquee = () => {
 					top: 0,
 					left: "5%",
 				}}>
-				<Image src={Asterisk} layout="responsive" alt="Three-dimensional black asterisk with a white outline" />
+				<Image src={Asterisk} layout="responsive" alt="Three-dimensional black asterisk with a white outline" draggable={false} />
 			</AsteriskWrapper>
 			<AsteriskWrapper
 				css={{
@@ -48,6 +48,7 @@ const Marquee = () => {
 					src={Asterisk2}
 					layout="responsive"
 					alt="Three-dimensional black asterisk with a white outline"
+					draggable={false}
 				/>
 			</AsteriskWrapper>
 			<StyledMarquee speed={40} gradient={false} loop={0}>

@@ -1,4 +1,4 @@
-import Cart from "@/components/Cart";
+import Cart from "@/components/cart/Cart";
 import { styled } from "@/stitches.config";
 
 const Circle = () => {
