@@ -54,6 +54,7 @@ const StyledContent = styled(Dialog.Content, {
     display: 'flex',
     flexDirection: 'column',
 
+    transform: 'translateZ(0)',
     color: 'white',
     backgroundColor: 'black',
     width: '100%',
@@ -182,12 +183,16 @@ const ProductEntry: React.FC<{
 
 const Cart = () => {
     const items = useStore((state) => state.cartItems);
+
+    const { open, setOpen } = useStore();
+
     return (
-        <Root>
+        <Root open={open} onOpenChange={setOpen} modal={true}>
             <Trigger>Cart ({Object.values(items).reduce((amount, item) => amount + item.quantity, 0)})</Trigger>
+
             <Portal>
                 <Overlay />
-                <Content>
+                <Content onCloseAutoFocus={(event) => event.preventDefault()}>
                     {/* First line, close button */}
                     <Box
                         css={{
@@ -252,11 +257,15 @@ const Cart = () => {
                             size="1.5rem">
                             TOTAL:
                             <span>
-                                $
-                                {Object.values(items).reduce(
-                                    (total, item) => total + item.product.price * item.quantity,
-                                    0
-                                )}
+                                ${/* Round to 2 decimal places */}
+                                {Math.round(
+                                    (Object.values(items).reduce(
+                                        (total, item) => total + item.product.price * item.quantity,
+                                        0
+                                    ) +
+                                        Number.EPSILON) *
+                                        100
+                                ) / 100}
                             </span>
                         </Text>
                         <Text

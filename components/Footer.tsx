@@ -17,19 +17,21 @@ const Footer = () => {
             <Box
                 css={{
                     display: 'flex',
-                    justifyContent: 'flex-end'
+                    gap: 32,
+                    justifyContent: 'flex-end',
+                    alignItems: 'center'
                 }}>
                 <Box
                     css={{
                         width: '20%',
                         transform: 'translateZ(0)'
                     }}>
-                    <Image src={Figure} alt="Three circles anidated" objectFit="contain" />
+                    <Image src={Figure} alt="Three circles anidated" objectFit="contain" draggable={false} />
                 </Box>
                 <Text size="14.5vw">WEAR</Text>
             </Box>
             {/* Second line, EVERYDAY */}
-            <Text size="14.5vw" fill={false}>
+            <Text css={{ marginBottom: 24 }} size="14.5vw" fill={false}>
                 EVERYDAY
             </Text>
         </Box>

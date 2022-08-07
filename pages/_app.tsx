@@ -30,6 +30,9 @@ const globalStyles = globalCss({
         padding: 0,
         textRendering: 'geometricPrecision',
         fontFamily: `"BasementGrotesque", "Helvetica Neue", sans-serif`
+    },
+    img: {
+        userSelect: 'none'
     }
 });
 

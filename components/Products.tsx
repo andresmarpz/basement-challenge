@@ -13,12 +13,15 @@ const Card = styled('div', {
 });
 
 const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
-    const { addToCart } = useStore();
+    const { addToCart, setOpen } = useStore();
     const [hovered, setHovered] = useState<boolean>(false);
 
     return (
         <Card
-            onClick={() => addToCart(product)}
+            onClick={() => {
+                addToCart(product);
+                setOpen(true);
+            }}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}>
             {/* Product image */}
