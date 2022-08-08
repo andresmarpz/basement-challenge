@@ -259,16 +259,27 @@ const Cart = () => {
                                 ) / 100}
                             </span>
                         </Text>
-                        <Text
-                            fill={false}
+                        <Box
+                            as="button"
+                            disabled={Object.keys(items).length === 0}
                             css={{
+                                all: 'unset',
+
+                                cursor: 'pointer',
+                                color: 'black',
+                                textShadow: '-1px 0 white, 0 1px white, 1px 0 white, 0 -1px white',
                                 textAlign: 'center',
                                 padding: 16,
                                 fontSize: '3rem',
-                                '@sm2': { fontSize: '1.5rem' }
+                                '@sm2': { fontSize: '1.5rem' },
+
+                                '&:disabled': {
+                                    cursor: 'not-allowed',
+                                    textShadow: '-1px 0 lightgray, 0 1px lightgray, 1px 0 lightgray, 0 -1px lightgray'
+                                }
                             }}>
                             CHECKOUT
-                        </Text>
+                        </Box>
                     </Box>
                 </Content>
             </Portal>
