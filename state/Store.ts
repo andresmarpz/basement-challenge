@@ -1,5 +1,6 @@
 import { Product } from '@/product/types';
 import create from 'zustand';
+import { persist } from 'zustand/middleware';
 
 export interface ItemEntry {
 	product: Product;
@@ -22,7 +23,7 @@ interface Store {
 	decrementQuantity: (product: Product) => void;
 }
 
-export const useStore = create<Store>((set, get) => ({
+export const useStore = create<Store, [["zustand/persist", {}]]>(persist((set, get) => ({
 	cartItems: {},
 	open: false,
 	setOpen: (open: boolean) => set({ open }),
@@ -61,4 +62,6 @@ export const useStore = create<Store>((set, get) => ({
 			}
 		})
 	}
+}), {
+	name: 'cart-storage'
 }));

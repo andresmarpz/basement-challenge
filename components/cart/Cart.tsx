@@ -10,6 +10,8 @@ import Text from '../commons/Text';
 import SizeSelector from './SizeSelector';
 import QuantityControl from './QuantityControl';
 import Flex from '../commons/Flex';
+import { useState } from 'react';
+import { useEffectOnce } from '@/hooks/useEffectOnce';
 
 const overlayShow = keyframes({
     '0%': { opacity: 0 },
@@ -173,13 +175,24 @@ const ProductEntry: React.FC<{
 };
 
 const Cart = () => {
+    const [mounted, setMounted] = useState<boolean>(false);
+
     const items = useStore((state) => state.cartItems);
 
     const { open, setOpen } = useStore();
 
+    useEffectOnce(() => setMounted(true));
+
     return (
         <Root open={open} onOpenChange={setOpen} modal={true}>
-            <Trigger>Cart ({Object.values(items).reduce((amount, item) => amount + item.quantity, 0)})</Trigger>
+            {/* 
+				We need to make sure the component has mounted since SSG generates a Cart (0)
+				and the persisted data we get from Zustand could not match since there is more than
+				0 items in the cart.
+			 */}
+            <Trigger>
+                Cart ({mounted ? Object.values(items).reduce((amount, item) => amount + item.quantity, 0) : '?'})
+            </Trigger>
 
             <Portal>
                 <Overlay />
