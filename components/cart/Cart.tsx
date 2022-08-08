@@ -178,8 +178,22 @@ const Cart = () => {
     const [mounted, setMounted] = useState<boolean>(false);
 
     const items = useStore((state) => state.cartItems);
-
     const { open, setOpen } = useStore();
+
+    const processCheckout = () => {
+        const ticket = {
+            products: Object.keys(items).map((key) => {
+                const { product, quantity } = items[key];
+                return {
+                    product: product.id,
+                    quantity
+                };
+            }),
+            total: Object.values(items).reduce((acc, { product, quantity }) => acc + product.price * quantity, 0)
+        };
+
+        console.log(ticket);
+    };
 
     useEffectOnce(() => setMounted(true));
 
@@ -275,6 +289,7 @@ const Cart = () => {
                         <Box
                             as="button"
                             disabled={Object.keys(items).length === 0}
+                            onClick={processCheckout}
                             css={{
                                 all: 'unset',
 
