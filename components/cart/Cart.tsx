@@ -116,7 +116,7 @@ const ProductContainer = styled('div', {
 
 const ProductEntry: React.FC<{
     item: ItemEntry;
-}> = ({ item: { product, quantity } }) => {
+}> = ({ item: { product, quantity, size } }) => {
     return (
         <ProductContainer>
             {/* Image span */}
@@ -164,7 +164,7 @@ const ProductEntry: React.FC<{
                             flexWrap: 'wrap'
                         }}>
                         <Flex css={{ alignItems: 'center', fontSize: '0.75rem', '@sm2': { fontSize: '1rem' } }}>
-                            SIZE: <SizeSelector option={product.options[0]} />
+                            SIZE: <SizeSelector product={product} size={size} option={product.options[0]} />
                         </Flex>
                         <Text css={{ fontSize: '1rem', '@sm2': { fontSize: '1.5rem' } }}>${product.price}</Text>
                     </Flex>

@@ -1,4 +1,5 @@
-import { Option } from '@/product/types';
+import { Option, Product } from '@/product/types';
+import { useStore } from '@/state/Store';
 import { styled } from '@/stitches.config';
 import * as RadioGroup from '@radix-ui/react-radio-group';
 
@@ -33,10 +34,17 @@ const Root = StyledRoot;
 const Item = StyledItem;
 
 const SizeSelector: React.FC<{
+    product: Product;
+    size: string;
     option: Option;
-}> = ({ option }) => {
+}> = ({ product, size, option }) => {
+    const { setProductSize } = useStore();
+
     return (
-        <Root defaultValue={option.values[0]}>
+        <Root
+            defaultValue={option.values[0]}
+            value={size}
+            onValueChange={(newValue) => setProductSize(product, newValue)}>
             {option.values.map((value) => (
                 <Item key={'opt' + value} value={value}>
                     {value}

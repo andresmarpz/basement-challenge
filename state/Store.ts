@@ -5,6 +5,7 @@ import { persist } from 'zustand/middleware';
 export interface ItemEntry {
 	product: Product;
 	quantity: number;
+	size: string,
 }
 interface Store {
 	/**
@@ -21,6 +22,7 @@ interface Store {
 	removeFromCart: (product: Product) => void;
 	incrementQuantity: (product: Product) => void;
 	decrementQuantity: (product: Product) => void;
+	setProductSize: (product: Product, size: string) => void;
 }
 
 export const useStore = create<Store, [["zustand/persist", {}]]>(persist((set, get) => ({
@@ -31,8 +33,11 @@ export const useStore = create<Store, [["zustand/persist", {}]]>(persist((set, g
 		const cartItems = get().cartItems;
 		set({
 			cartItems: {
-				...cartItems, [product.id]: {
-					product, quantity: (cartItems[product.id]?.quantity ?? 0) + 1
+				...cartItems,
+				[product.id]: {
+					product,
+					quantity: (cartItems[product.id]?.quantity ?? 0) + 1,
+					size: 'S'
 				}
 			}
 		})
@@ -46,8 +51,11 @@ export const useStore = create<Store, [["zustand/persist", {}]]>(persist((set, g
 		const cartItems = get().cartItems;
 		set({
 			cartItems: {
-				...cartItems, [product.id]: {
-					product, quantity: cartItems[product.id].quantity + 1
+				...cartItems,
+				[product.id]: {
+					product,
+					quantity: cartItems[product.id].quantity + 1,
+					size: cartItems[product.id].size
 				}
 			}
 		})
@@ -56,8 +64,24 @@ export const useStore = create<Store, [["zustand/persist", {}]]>(persist((set, g
 		const cartItems = get().cartItems;
 		set({
 			cartItems: {
-				...cartItems, [product.id]: {
-					product, quantity: cartItems[product.id].quantity - 1
+				...cartItems,
+				[product.id]: {
+					product,
+					quantity: cartItems[product.id].quantity - 1,
+					size: cartItems[product.id].size
+				}
+			}
+		})
+	},
+	setProductSize: (product: Product, size: string) => {
+		const cartItems = get().cartItems;
+		set({
+			cartItems: {
+				...cartItems,
+				[product.id]: {
+					product,
+					quantity: cartItems[product.id].quantity,
+					size
 				}
 			}
 		})
