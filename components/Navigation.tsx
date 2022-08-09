@@ -17,9 +17,11 @@ const StyledNavigation = styled('nav', {
     }
 });
 
-const StyledLogo = styled('h1', {
+const StyledLogo = styled('a', {
     color: 'white',
     fontSize: '2rem',
+    textDecoration: 'none',
+    marginY: 30,
 
     variants: {
         visible: {
@@ -43,6 +45,8 @@ const Navigation: React.FC = () => {
         <StyledNavigation>
             <StyledFlex>
                 <StyledLogo
+                    href="https://basement.studio"
+                    rel="noreferrer noopener"
                     visible={{
                         '@initial': 'false',
                         '@sm2': true
@@ -50,6 +54,8 @@ const Navigation: React.FC = () => {
                     basement
                 </StyledLogo>
                 <StyledLogo
+                    href="https://basement.studio"
+                    rel="noreferrer noopener"
                     visible={{
                         '@initial': true,
                         '@sm2': false
