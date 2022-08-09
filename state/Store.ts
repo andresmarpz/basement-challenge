@@ -33,7 +33,7 @@ export const useStore = create<Store, [["zustand/persist", {}]]>(persist((set, g
 				[product.id]: {
 					product,
 					quantity: (cartItems[product.id]?.quantity ?? 0) + 1,
-					size: 'S'
+					size: (cartItems[product.id]?.size ?? 'S')
 				}
 			}
 		})
