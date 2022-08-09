@@ -1,7 +1,7 @@
 import Box from '@/components/commons/Box';
 import { Product } from '@/product/types';
 import { useState } from 'react';
-import { useStore } from '@/state/Store';
+import { useCart, useStore } from '@/state/Store';
 import { styled } from '@/stitches.config';
 
 import Image from 'next/image';
@@ -13,7 +13,8 @@ const Card = styled('div', {
 });
 
 const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
-    const { addToCart, setOpen } = useStore();
+    const { addToCart } = useStore();
+    const { setOpen } = useCart();
     const [hovered, setHovered] = useState<boolean>(false);
 
     return (

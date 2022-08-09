@@ -16,8 +16,6 @@ interface Store {
 	cartItems: {
 		[key: string]: ItemEntry
 	};
-	open: boolean;
-	setOpen: (open: boolean) => void;
 	addToCart: (product: Product) => void;
 	removeFromCart: (product: Product) => void;
 	incrementQuantity: (product: Product) => void;
@@ -27,8 +25,6 @@ interface Store {
 
 export const useStore = create<Store, [["zustand/persist", {}]]>(persist((set, get) => ({
 	cartItems: {},
-	open: false,
-	setOpen: (open: boolean) => set({ open }),
 	addToCart: (product: Product) => {
 		const cartItems = get().cartItems;
 		set({
@@ -89,3 +85,13 @@ export const useStore = create<Store, [["zustand/persist", {}]]>(persist((set, g
 }), {
 	name: 'cart-storage'
 }));
+
+interface Cart {
+	open: boolean,
+	setOpen: (open: boolean) => void,
+}
+
+export const useCart = create<Cart>(set => ({
+	open: false,
+	setOpen: (open: boolean) => set({ open }),
+}))

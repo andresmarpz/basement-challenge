@@ -1,6 +1,6 @@
 import { keyframes, styled } from '@/stitches.config';
 
-import { ItemEntry, useStore } from '@/state/Store';
+import { ItemEntry, useCart, useStore } from '@/state/Store';
 
 import { Product } from '@/product/types';
 import * as Dialog from '@radix-ui/react-dialog';
@@ -178,7 +178,7 @@ const Cart = () => {
     const [mounted, setMounted] = useState<boolean>(false);
 
     const items = useStore((state) => state.cartItems);
-    const { open, setOpen } = useStore();
+    const { open, setOpen } = useCart();
 
     const processCheckout = () => {
         const ticket = {
