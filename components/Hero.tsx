@@ -17,7 +17,8 @@ const Ellipsis: React.FC<React.PropsWithChildren> = ({ children }) => {
                 padding: '1.5vw',
                 width: '10vw',
                 minWidth: 36,
-                fontSize: '1.5vw'
+                fontSize: '1.5vw',
+                userSelect: 'none'
             }}>
             {children}
         </Box>
