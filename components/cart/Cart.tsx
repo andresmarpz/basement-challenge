@@ -61,7 +61,7 @@ const StyledContent = styled(Dialog.Content, {
     color: 'white',
     backgroundColor: 'black',
     width: '100%',
-    height: '100vh',
+    height: 'calc(var(--vh) * 100)',
     position: 'fixed',
     top: 0,
     right: 0,

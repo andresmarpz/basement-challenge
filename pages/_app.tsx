@@ -1,4 +1,5 @@
 import { globalCss } from '@/stitches.config';
+import { RealViewportProvider } from 'next-real-viewport';
 import type { AppProps } from 'next/app';
 
 const globalStyles = globalCss({
@@ -39,7 +40,11 @@ const globalStyles = globalCss({
 function MyApp({ Component, pageProps }: AppProps) {
     globalStyles();
 
-    return <Component {...pageProps} />;
+    return (
+        <RealViewportProvider>
+            <Component {...pageProps} />
+        </RealViewportProvider>
+    );
 }
 
 export default MyApp;
