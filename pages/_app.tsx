@@ -7,14 +7,14 @@ const globalStyles = globalCss({
         fontFamily: 'BasementGrotesque',
         fontStyle: 'normal',
 				/**
-				 * 	In this case I opted for fontDisplay: 'auto' because the font is really really
+				 * 	In this case I opted for fontDisplay: 'block' because the font is really really
 				 *  important for branding and I would rather have a blank space than a fallback
 				 *  font that doesn't look good.
 				 *  More info on this can be found at:
 				 *  https://www.youtube.com/watch?v=G0cOQ79WKZE&ab_channel=LeeRobinson &
 				 *  https://solutions-loading-web-fonts.vercel.app/
 				 */
-        fontDisplay: 'auto',
+        fontDisplay: 'block',
         src: 'url("/fonts/basementgrotesque.woff2") format("woff2")'
     },
     '*': {
